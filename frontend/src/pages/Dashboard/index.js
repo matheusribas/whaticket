@@ -15,9 +15,14 @@ import { i18n } from "../../translate/i18n";
 import Chart from "./Chart"
 
 const useStyles = makeStyles(theme => ({
+  mainContainer: {
+    height: '100%',
+    width: '100%',
+    background: theme.palette.background.paper,
+  },
 	container: {
 		paddingTop: theme.spacing(4),
-		paddingBottom: theme.spacing(4),
+		paddingBottom: theme.spacing(4)
 	},
 	fixedHeightPaper: {
 		padding: theme.spacing(2),
@@ -64,52 +69,52 @@ const Dashboard = () => {
 	}
 
 	return (
-		<div>
-			<Container maxWidth="lg" className={classes.container}>
-				<Grid container spacing={3}>
-					<Grid item xs={4}>
-						<Paper className={classes.customFixedHeightPaper} style={{ overflow: "hidden" }}>
-							<Typography component="h3" variant="h6" color="primary" paragraph>
-								{i18n.t("dashboard.messages.inAttendance.title")}
-							</Typography>
-							<Grid item>
-								<Typography component="h1" variant="h4">
-									{GetTickets("open", "true", "false")}
-								</Typography>
-							</Grid>
-						</Paper>
-					</Grid>
-					<Grid item xs={4}>
-						<Paper className={classes.customFixedHeightPaper} style={{ overflow: "hidden" }}>
-							<Typography component="h3" variant="h6" color="primary" paragraph>
-								{i18n.t("dashboard.messages.waiting.title")}
-							</Typography>
-							<Grid item>
-								<Typography component="h1" variant="h4">
-									{GetTickets("pending", "true", "false")}
-								</Typography>
-							</Grid>
-						</Paper>
-					</Grid>
-					<Grid item xs={4}>
-						<Paper className={classes.customFixedHeightPaper} style={{ overflow: "hidden" }}>
-							<Typography component="h3" variant="h6" color="primary" paragraph>
-								{i18n.t("dashboard.messages.closed.title")}
-							</Typography>
-							<Grid item>
-								<Typography component="h1" variant="h4">
-									{GetTickets("closed", "true", "false")}
-								</Typography>
-							</Grid>
-						</Paper>
-					</Grid>
-					<Grid item xs={12}>
-						<Paper className={classes.fixedHeightPaper}>
-							<Chart />
-						</Paper>
-					</Grid>
-				</Grid>
-			</Container>
+		<div className={classes.mainContainer}>
+      <Container maxWidth="lg" className={classes.container}>
+        <Grid container spacing={3}>
+          <Grid item xs={4}>
+            <Paper className={classes.customFixedHeightPaper} style={{ overflow: "hidden" }}>
+              <Typography component="h3" variant="h6" color="primary" paragraph>
+                {i18n.t("dashboard.messages.inAttendance.title")}
+              </Typography>
+              <Grid item>
+                <Typography component="h1" variant="h4">
+                  {GetTickets("open", "true", "false")}
+                </Typography>
+              </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper className={classes.customFixedHeightPaper} style={{ overflow: "hidden" }}>
+              <Typography component="h3" variant="h6" color="primary" paragraph>
+                {i18n.t("dashboard.messages.waiting.title")}
+              </Typography>
+              <Grid item>
+                <Typography component="h1" variant="h4">
+                  {GetTickets("pending", "true", "false")}
+                </Typography>
+              </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={4}>
+            <Paper className={classes.customFixedHeightPaper} style={{ overflow: "hidden" }}>
+              <Typography component="h3" variant="h6" color="primary" paragraph>
+                {i18n.t("dashboard.messages.closed.title")}
+              </Typography>
+              <Grid item>
+                <Typography component="h1" variant="h4">
+                  {GetTickets("closed", "true", "false")}
+                </Typography>
+              </Grid>
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper className={classes.fixedHeightPaper}>
+              <Chart />
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
 		</div>
 	)
 }

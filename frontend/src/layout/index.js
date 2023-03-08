@@ -30,13 +30,11 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    height: "100vh",
-    [theme.breakpoints.down("sm")]: {
-      height: "calc(100vh - 56px)",
-    },
+    height: "100vh"
   },
 
   toolbar: {
+    padding: 0,
     paddingRight: 24, // keep right padding when drawer closed
   },
   toolbarIcon: {
@@ -61,14 +59,21 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
+  boxMenuButton: {
+    width: theme.spacing(7),
+    display: 'flex',
+    justifyContent: 'center',
+  },
   menuButton: {
-    marginRight: 36,
+    marginLeft: 0,
   },
   menuButtonHidden: {
     display: "none",
   },
   title: {
     flexGrow: 1,
+    color: theme.palette.text.primary,
+    marginLeft: 24
   },
   drawerPaper: {
     position: "relative",
@@ -86,9 +91,9 @@ const useStyles = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     width: theme.spacing(7),
-    [theme.breakpoints.up("sm")]: {
-      width: theme.spacing(9),
-    },
+    // [theme.breakpoints.up("sm")]: {
+    //   width: theme.spacing(9),
+    // },
   },
   appBarSpacer: {
     minHeight: "48px",
@@ -181,11 +186,9 @@ const LoggedInLayout = ({ children }) => {
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        <Divider />
         <List>
           <MainListItems drawerClose={drawerClose} />
         </List>
-        <Divider />
       </Drawer>
       <UserModal
         open={userModalOpen}
@@ -195,32 +198,33 @@ const LoggedInLayout = ({ children }) => {
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, drawerOpen && classes.appBarShift)}
-        color={process.env.NODE_ENV === "development" ? "inherit" : "primary"}
+        color="inherit"
       >
         <Toolbar variant="dense" className={classes.toolbar}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => setDrawerOpen(!drawerOpen)}
+          <div 
             className={clsx(
-              classes.menuButton,
+              classes.boxMenuButton,
               drawerOpen && classes.menuButtonHidden
             )}
           >
-            <MenuIcon />
-          </IconButton>
+            <IconButton
+              edge="start"
+              aria-label="open drawer"
+              onClick={() => setDrawerOpen(!drawerOpen)}
+              className={classes.menuButton}
+            >
+              <MenuIcon />
+            </IconButton>
+          </div>
           <Typography
             component="h1"
             variant="h6"
-            color="inherit"
             noWrap
             className={classes.title}
           >
-            WhaTicket
+            WOWhat
           </Typography>
           {user.id && <NotificationsPopOver />}
-
           <div>
             <IconButton
               aria-label="account of current user"

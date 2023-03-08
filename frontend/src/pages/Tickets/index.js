@@ -44,9 +44,10 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     height: "100%",
     flexDirection: "column",
+    background: theme.palette.background.paper
   },
   welcomeMsg: {
-    backgroundColor: "#eee",
+    backgroundColor: theme.palette.type === "dark" ? "#202C33" : "#eee",
     display: "flex",
     justifyContent: "space-evenly",
     alignItems: "center",

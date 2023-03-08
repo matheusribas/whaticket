@@ -8,6 +8,7 @@ import { ptBR } from "@material-ui/core/locale";
 const App = () => {
   const [locale, setLocale] = useState();
 
+  // https://v4.mui.com/pt/customization/default-theme/?expand-path=$.palette.background
   const theme = createTheme(
     {
       scrollbarStyles: {
@@ -16,12 +17,41 @@ const App = () => {
           height: "8px",
         },
         "&::-webkit-scrollbar-thumb": {
-          boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.3)",
+          boxShadow: "0 3px 10px 0 rgba(34, 41, 47, 0.2)",
           backgroundColor: "#e8e8e8",
         },
       },
       palette: {
-        primary: { main: "#2576d2" },
+        primary: { main: "#975aff" },
+        type: 'dark',
+        action: {
+          disabledOpacity: 0.6
+        }
+      },
+      typography: {
+        fontFamily: "'Poppins', sans-serif",
+        fontWeightLight: 300,
+        fontWeightRegular: 400,
+        fontWeightMedium: 600,
+        fontWeightBold: 700,
+        h1: {
+          fontWeight: 600,
+        },
+        h2: {
+          fontWeight: 600,
+        },
+        h3: {
+          fontWeight: 600,
+        },
+        h4: {
+          fontWeight: 600,
+        },
+        h5: {
+          fontWeight: 600,
+        },
+        h6: {
+          fontWeight: 600,
+        }
       },
     },
     locale

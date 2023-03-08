@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   ticketHeader: {
     display: "flex",
-    backgroundColor: "#eee",
+    backgroundColor: theme.palette.type === 'dark' ? "#202C33" : "#f0f2f5",
     flex: "none",
     borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
     [theme.breakpoints.down("sm")]: {
@@ -31,7 +31,7 @@ const TicketHeader = ({ loading, children }) => {
         <TicketHeaderSkeleton />
       ) : (
         <Card square className={classes.ticketHeader}>
-          <Button color="primary" onClick={handleBack}>
+          <Button color="inherit" onClick={handleBack}>
             <ArrowBackIos />
           </Button>
           {children}

@@ -17,9 +17,14 @@ const useStyles = makeStyles(theme => ({
 	root: {
 		display: "flex",
 		alignItems: "center",
-		padding: theme.spacing(8, 8, 3),
+		padding: theme.spacing(2),
+    height: '100%',
+    width: '100%',
+    background: theme.palette.background.paper
 	},
-
+  title: {
+    color: theme.palette.text.primary
+  },
 	paper: {
 		padding: theme.spacing(2),
 		display: "flex",
@@ -95,9 +100,15 @@ const Settings = () => {
 	return (
 		<div className={classes.root}>
 			<Container className={classes.container} maxWidth="sm">
-				<Typography variant="body2" gutterBottom>
-					{i18n.t("settings.title")}
-				</Typography>
+        <Typography
+          component="h1"
+          variant="h6"
+          className={classes.title}
+          gutterBottom
+        >
+          {i18n.t("settings.title")}
+        </Typography>
+
 				<Paper className={classes.paper}>
 					<Typography variant="body1">
 						{i18n.t("settings.settings.userCreation.name")}
@@ -121,7 +132,6 @@ const Settings = () => {
 							{i18n.t("settings.settings.userCreation.options.disabled")}
 						</option>
 					</Select>
-
 				</Paper>
 
 				<Paper className={classes.paper}>

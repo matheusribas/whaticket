@@ -26,7 +26,7 @@ import VcardPreview from "../VcardPreview";
 import LocationPreview from "../LocationPreview";
 import ModalImageCors from "../ModalImageCors";
 import MessageOptionsMenu from "../MessageOptionsMenu";
-import whatsBackground from "../../assets/wa-background.png";
+import whatsBackground from "../../assets/background-whats.png";
 
 import api from "../../services/api";
 import toastError from "../../errors/toastError";
@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
   messagesList: {
     backgroundImage: `url(${whatsBackground})`,
+    backgroundColor: theme.palette.type === 'dark' ? "#0B141A" : '#EFEAE2',
     display: "flex",
     flexDirection: "column",
     flexGrow: 1,
@@ -79,8 +80,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     whiteSpace: "pre-wrap",
-    backgroundColor: "#ffffff",
-    color: "#303030",
+    backgroundColor: theme.palette.type === 'dark' ? "#202c33" : "#ffffff",
+    color: theme.palette.type === 'dark' ? "#fff" : "#303030",
     alignSelf: "flex-start",
     borderTopLeftRadius: 0,
     borderTopRightRadius: 8,
@@ -90,13 +91,13 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: 5,
     paddingTop: 5,
     paddingBottom: 0,
-    boxShadow: "0 1px 1px #b3b3b3",
+    boxShadow: theme.palette.type === 'dark' ? "0 3px 10px 0 rgb(34 41 47)" : "0 1px 1px #b3b3b3",
   },
 
   quotedContainerLeft: {
     margin: "-3px -80px 6px -6px",
     overflow: "hidden",
-    backgroundColor: "#f0f0f0",
+    backgroundColor:  theme.palette.type === "dark" ? "#1D282F" : "#F5F6F6",
     borderRadius: "7.5px",
     display: "flex",
     position: "relative",
@@ -105,10 +106,12 @@ const useStyles = makeStyles((theme) => ({
   quotedMsg: {
     padding: 10,
     maxWidth: 300,
+    width: "100%",
     height: "auto",
     display: "block",
     whiteSpace: "pre-wrap",
     overflow: "hidden",
+    background: theme.palette.type === "dark" ? "#1D282F" : "#F5F6F6"
   },
 
   quotedSideColorLeft: {
@@ -133,8 +136,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     whiteSpace: "pre-wrap",
-    backgroundColor: "#dcf8c6",
-    color: "#303030",
+    backgroundColor: theme.palette.type === 'dark' ? "#005C4B" : "#dcf8c6",
+    color: theme.palette.type === 'dark' ? "#fff" : "#303030",
     alignSelf: "flex-end",
     borderTopLeftRadius: 8,
     borderTopRightRadius: 8,
@@ -144,7 +147,7 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: 5,
     paddingTop: 5,
     paddingBottom: 0,
-    boxShadow: "0 1px 1px #b3b3b3",
+    boxShadow: theme.palette.type === 'dark' ? "0 3px 10px 0 rgb(34 41 47)" : "0 1px 1px #b3b3b3",
   },
 
   quotedContainerRight: {
@@ -188,6 +191,9 @@ const useStyles = makeStyles((theme) => ({
   textContentItem: {
     overflowWrap: "break-word",
     padding: "3px 80px 6px 6px",
+    "& a": {
+      color: "#53bdeb"
+    },
   },
 
   textContentItemDeleted: {

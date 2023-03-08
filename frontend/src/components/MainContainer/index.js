@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
     // height: `calc(100% - 48px)`,
     padding: 0,
     height: "100%",
+    background: theme.palette.background.paper
   },
 
   contentWrapper: {

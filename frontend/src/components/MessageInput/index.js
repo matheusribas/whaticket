@@ -41,7 +41,7 @@ const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 const useStyles = makeStyles((theme) => ({
   mainWrapper: {
-    background: "#eee",
+    background: theme.palette.type === 'dark' ? "#202C33" :"#eee",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   newMessageBox: {
-    background: "#eee",
+    background: theme.palette.type === 'dark' ? "#202C33" :"#f0f2f5",
     width: "100%",
     display: "flex",
     padding: "7px",
@@ -64,9 +64,9 @@ const useStyles = makeStyles((theme) => ({
   messageInputWrapper: {
     padding: 6,
     marginRight: 7,
-    background: "#fff",
+    background: theme.palette.type === 'dark' ? "#2a3942" :"#fff",
     display: "flex",
-    borderRadius: 20,
+    borderRadius: '3rem',
     flex: 1,
     position: "relative",
   },
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#eee",
+    backgroundColor: theme.palette.type === 'dark' ? "#202C33" :"#f0f2f5",
     borderTop: "1px solid rgba(0, 0, 0, 0.12)",
   },
 

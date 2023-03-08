@@ -58,6 +58,9 @@ const useStyles = makeStyles(theme => ({
 	contactNameWrapper: {
 		display: "flex",
 		justifyContent: "space-between",
+    "& a": {
+      color: "#53bdeb"
+    },
 	},
 
 	lastMessageTime: {
