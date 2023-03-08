@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 7,
     background: theme.palette.type === 'dark' ? "#2a3942" :"#fff",
     display: "flex",
-    borderRadius: '3rem',
+    borderRadius: '16px',
     flex: 1,
     position: "relative",
   },
@@ -178,22 +178,29 @@ const useStyles = makeStyles((theme) => ({
   messageQuickAnswersWrapper: {
     margin: 0,
     position: "absolute",
-    bottom: "50px",
-    background: "#ffffff",
-    padding: "2px",
-    border: "1px solid #CCC",
+    bottom: "58px",
+    background: theme.palette.type === "dark" ? "#202C33" : "#fafafa",
+    padding: "8px",
     left: 0,
     width: "100%",
     "& li": {
+      background: "#005C4B",
+      borderRadius: "16px",
       listStyle: "none",
+
+      "& + li": {
+        marginTop: "8px"
+      },
+
       "& a": {
         display: "block",
         padding: "8px",
         textOverflow: "ellipsis",
         overflow: "hidden",
-        // maxHeight: "32px",
+        borderRadius: "16px",
+
         "&:hover": {
-          background: "#F1F1F1",
+          background: theme.palette.type === "dark" ? "#014c3e" : "#F1F1F1",
           cursor: "pointer",
         },
         "& div h4": {
