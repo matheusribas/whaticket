@@ -8,7 +8,6 @@ import {
   Toolbar,
   List,
   Typography,
-  Divider,
   MenuItem,
   IconButton,
   Menu,
@@ -36,6 +35,8 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     padding: 0,
     paddingRight: 24, // keep right padding when drawer closed
+    minHeight: "56px",
+    color: theme.palette.text.primary,
   },
   toolbarIcon: {
     display: "flex",
@@ -50,6 +51,8 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    borderBottom: `unset !important`,
+    boxShadow: 'unset !important'
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -72,7 +75,6 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    color: theme.palette.text.primary,
     marginLeft: 24
   },
   drawerPaper: {
@@ -83,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    background: theme.palette.background.default
   },
   drawerPaperClose: {
     overflowX: "hidden",
@@ -96,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
     // },
   },
   appBarSpacer: {
-    minHeight: "48px",
+    minHeight: "56px",
   },
   content: {
     flex: 1,

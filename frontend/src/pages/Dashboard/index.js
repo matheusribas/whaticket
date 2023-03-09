@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   mainContainer: {
     height: '100%',
     width: '100%',
-    background: theme.palette.background.paper,
+    background: theme.palette.background.default,
   },
 	container: {
 		paddingTop: theme.spacing(4),
@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
 		overflow: "auto",
 		flexDirection: "column",
 		height: 120,
+    // background: theme.palette.grey[900]
 	},
 	customFixedHeightPaperLg: {
 		padding: theme.spacing(2),

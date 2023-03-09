@@ -77,7 +77,8 @@ const reducer = (state, action) => {
 const useStyles = makeStyles((theme) => ({
   mainPaper: {
     flex: 1,
-    padding: theme.spacing(1),
+		padding: theme.spacing(2),
+		margin: `0px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
     overflowY: "scroll",
     ...theme.scrollbarStyles,
   },

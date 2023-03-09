@@ -44,8 +44,9 @@ import toastError from "../../errors/toastError";
 const useStyles = makeStyles(theme => ({
 	mainPaper: {
 		flex: 1,
-		padding: theme.spacing(1),
 		overflowY: "scroll",
+		padding: theme.spacing(2),
+		margin: `0px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
 		...theme.scrollbarStyles,
 	},
 	customTableCell: {
