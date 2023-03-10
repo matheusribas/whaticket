@@ -85,7 +85,8 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    background: theme.palette.background.default
+    background: theme.palette.background.paper,
+    borderColor: theme.palette.type === 'dark' ? "rgba(0, 0, 0, 0.12)" : "rgba(0, 0, 0, 0.05)",
   },
   drawerPaperClose: {
     overflowX: "hidden",
@@ -225,7 +226,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            WOWhat
+            WOWZap
           </Typography>
           {user.id && <NotificationsPopOver />}
           <div>

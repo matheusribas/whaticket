@@ -5,6 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
 	contactsHeader: {
 		display: "flex",
+    flexWrap: 'wrap',
 		alignItems: "center",
 		padding: theme.spacing(2),
 	},

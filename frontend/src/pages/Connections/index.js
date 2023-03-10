@@ -46,6 +46,7 @@ const useStyles = makeStyles(theme => ({
 		flex: 1,
 		overflowY: "scroll",
 		padding: theme.spacing(2),
+    borderRadius: theme.spacing(1),
 		margin: `0px ${theme.spacing(3)}px ${theme.spacing(3)}px`,
 		...theme.scrollbarStyles,
 	},

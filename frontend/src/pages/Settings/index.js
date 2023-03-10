@@ -24,6 +24,8 @@ const useStyles = makeStyles(theme => ({
 	},
   mainPaper: {
 		padding: theme.spacing(2),
+    borderRadius: theme.spacing(1),
+    boxShadow: theme.palette.type === 'dark' ? "0 3px 10px 0 rgba(34, 41, 47, 0.2)" : "0 3px 10px 0 rgba(34, 41, 47, 0.1)",
   },
   title: {
     color: theme.palette.text.primary
@@ -33,6 +35,7 @@ const useStyles = makeStyles(theme => ({
 		display: "flex",
 		alignItems: "center",
 		marginBottom: 12,
+    boxShadow: theme.palette.type === 'dark' ? "0 3px 10px 0 rgba(34, 41, 47, 0.4)" : "0 3px 10px 0 rgba(34, 41, 47, 0.2)",
 	},
 	settingOption: {
 		marginLeft: "auto",

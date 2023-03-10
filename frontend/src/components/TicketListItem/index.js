@@ -158,6 +158,7 @@ const TicketListItem = ({ ticket }) => {
 		<React.Fragment key={ticket.id}>
 			<ListItem
 				dense
+        component='a'
 				button
 				onClick={e => {
 					if (ticket.status === "pending") return;

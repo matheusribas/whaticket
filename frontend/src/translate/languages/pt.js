@@ -398,7 +398,7 @@ const messages = {
         buttons: {
           edit: "Editar contato",
         },
-        extraInfo: "Outras informações",
+        extraInfo: "Informações adicionais",
       },
       ticketOptionsMenu: {
         delete: "Deletar",

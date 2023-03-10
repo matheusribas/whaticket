@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
 	header: {
 		display: "flex",
 		borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
-		backgroundColor: "#eee",
+		backgroundColor: theme.palette.type === 'dark' ? '#3a3a3a' : '#eee',
 		alignItems: "center",
 		padding: theme.spacing(0, 1),
 		minHeight: "73px",
@@ -44,9 +44,9 @@ const useStyles = makeStyles(theme => ({
 	},
 	content: {
 		display: "flex",
-		backgroundColor: "#eee",
+		backgroundColor: theme.palette.background.default,
 		flexDirection: "column",
-		padding: "8px 0px 8px 8px",
+		padding: theme.spacing(2, 1, 2, 2),
 		height: "100%",
 		overflowY: "scroll",
 		...theme.scrollbarStyles,
@@ -64,20 +64,27 @@ const useStyles = makeStyles(theme => ({
 		flexDirection: "column",
 		alignItems: "center",
 		justifyContent: "center",
+    border: 'unset',
+    borderRadius: theme.spacing(1),
+    boxShadow: theme.palette.type === 'dark' ? "0 3px 10px 0 rgba(34, 41, 47, 0.2)" : "0 3px 10px 0 rgba(34, 41, 47, 0.1)",
 		"& > *": {
 			margin: 4,
 		},
 	},
 
 	contactDetails: {
-		marginTop: 8,
-		padding: 8,
+		marginTop: theme.spacing(1),
+		padding: theme.spacing(1),
 		display: "flex",
 		flexDirection: "column",
+    border: 'unset',
+    borderRadius: theme.spacing(1),
+    boxShadow: theme.palette.type === 'dark' ? "0 3px 10px 0 rgba(34, 41, 47, 0.2)" : "0 3px 10px 0 rgba(34, 41, 47, 0.1)",
 	},
 	contactExtraInfo: {
-		marginTop: 4,
-		padding: 6,
+    marginTop: theme.spacing(1),
+    padding: 4,
+		border: 'unset',
 	},
 }));
 
@@ -149,8 +156,8 @@ const ContactDrawer = ({ open, handleDrawerClose, contact, loading }) => {
 								variant="outlined"
 								className={classes.contactExtraInfo}
 							>
-								<InputLabel>{info.name}</InputLabel>
-								<Typography component="div" noWrap style={{ paddingTop: 2 }}>
+								<InputLabel component="strong">{info.name}:</InputLabel>
+								<Typography component="div" noWrap style={{ paddingTop: 4 }}>
 									<MarkdownWrapper>{info.value}</MarkdownWrapper>
 								</Typography>
 							</Paper>

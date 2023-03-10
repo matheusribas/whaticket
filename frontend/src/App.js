@@ -26,10 +26,8 @@ const App = () => {
           light: "#79cb8e",
           main: "#5aff8d",
           dark: "#309f57",
-          // main: "#975aff" // roxo
         },
         type: 'dark',
-        // divider: "#333333",
         action: {
           disabledOpacity: 0.6
         }

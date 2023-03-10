@@ -54,9 +54,9 @@ const Chart = () => {
 
 	return (
 		<React.Fragment>
-			<Title>{`${i18n.t("dashboard.charts.perDay.title")}${
-				tickets.length
-			}`}</Title>
+			<Title>
+        {`${i18n.t("dashboard.charts.perDay.title")} ${tickets.length}`}
+      </Title>
 			<ResponsiveContainer>
 				<BarChart
 					data={chartData}
@@ -67,7 +67,7 @@ const Chart = () => {
 						top: 16,
 						right: 16,
 						bottom: 0,
-						left: 24,
+						left: 16,
 					}}
 				>
 					<CartesianGrid strokeDasharray="3 3" />
