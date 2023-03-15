@@ -97,10 +97,12 @@ const useStyles = makeStyles(theme => ({
 	ticketQueueColor: {
 		flex: "none",
 		width: "8px",
-		height: "100%",
+		height: "80%",
 		position: "absolute",
 		top: "0%",
 		left: "0%",
+    margin: '7px 0 0 4px',
+    borderRadius: "8px"
 	},
 
 	userTag: {
@@ -160,10 +162,7 @@ const TicketListItem = ({ ticket }) => {
 				dense
         component='a'
 				button
-				onClick={e => {
-					if (ticket.status === "pending") return;
-					handleSelectTicket(ticket.id);
-				}}
+				onClick={e => handleSelectTicket(ticket.id)}
 				selected={ticketId && +ticketId === ticket.id}
 				className={clsx(classes.ticket, {
 					[classes.pendingTicket]: ticket.status === "pending",
@@ -246,7 +245,7 @@ const TicketListItem = ({ ticket }) => {
 						</span>
 					}
 				/>
-				{ticket.status === "pending" && (
+				{/* {ticket.status === "pending" && (
 					<ButtonWithSpinner
 						color="primary"
 						variant="contained"
@@ -257,7 +256,7 @@ const TicketListItem = ({ ticket }) => {
 					>
 						{i18n.t("ticketsList.buttons.accept")}
 					</ButtonWithSpinner>
-				)}
+				)} */}
 			</ListItem>
 			<Divider variant="inset" component="li" />
 		</React.Fragment>

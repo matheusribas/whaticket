@@ -30,8 +30,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     flexDirection: "column",
     overflow: "hidden",
-    borderTopRightRadius: 0,
-    borderBottomRightRadius: 0,
+    borderRadius: 0
   },
 
   tabsHeader: {
@@ -52,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
   ticketOptionsBox: {
     display: "flex",
+    flexWrap: 'wrap',
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: theme.palette.type === "dark" ? "#212121" : "#fafafa",
@@ -98,7 +98,7 @@ const TicketsManager = () => {
   const [tab, setTab] = useState("open");
   const [tabOpen, setTabOpen] = useState("open");
   const [newTicketModalOpen, setNewTicketModalOpen] = useState(false);
-  const [showAllTickets, setShowAllTickets] = useState(false);
+  const [showMyTickets, setShowMyTickets] = useState(false);
   const searchInputRef = useRef();
   const { user } = useContext(AuthContext);
 
@@ -109,8 +109,8 @@ const TicketsManager = () => {
   const [selectedQueueIds, setSelectedQueueIds] = useState(userQueueIds || []);
 
   useEffect(() => {
-    if (user.profile.toUpperCase() === "ADMIN") {
-      setShowAllTickets(true);
+    if (user.profile.toUpperCase() !== "ADMIN") {
+      setShowMyTickets(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -215,16 +215,14 @@ const TicketsManager = () => {
               perform="tickets-manager:showall"
               yes={() => (
                 <FormControlLabel
-                  label={i18n.t("tickets.buttons.showAll")}
+                  label="Meus atendimentos" //{i18n.t("tickets.buttons.showAll")}
                   labelPlacement="start"
                   control={
                     <Switch
                       size="small"
-                      checked={showAllTickets}
-                      onChange={() =>
-                        setShowAllTickets((prevState) => !prevState)
-                      }
-                      name="showAllTickets"
+                      checked={showMyTickets}
+                      onChange={() => setShowMyTickets((prevState) => !prevState)}
+                      name="showMyTickets"
                       color="primary"
                     />
                   }
@@ -276,7 +274,7 @@ const TicketsManager = () => {
         <Paper className={classes.ticketsWrapper}>
           <TicketsList
             status="open"
-            showAll={showAllTickets}
+            showAll={!showMyTickets}
             selectedQueueIds={selectedQueueIds}
             updateCount={(val) => setOpenCount(val)}
             style={applyPanelStyle("open")}

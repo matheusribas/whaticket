@@ -36,7 +36,7 @@ const messages = {
       dashboard: {
         charts: {
           perDay: {
-            title: "Tickets hoje: ",
+            title: "Atendimentos hoje: ",
           },
         },
         messages: {
@@ -130,7 +130,7 @@ const messages = {
           deleteTitle: "Deletar ",
           importTitlte: "Importar contatos",
           deleteMessage:
-            "Tem certeza que deseja deletar este contato? Todos os tickets relacionados serão perdidos.",
+            "Tem certeza que deseja deletar este contato? Todos os atendimentos relacionados serão perdidos.",
           importMessage: "Deseja importas todos os contatos do telefone?",
         },
         buttons: {
@@ -218,7 +218,7 @@ const messages = {
         success: "Usuário salvo com sucesso.",
       },
       chat: {
-        noTicketMessage: "Selecione um ticket para começar a conversar.",
+        noTicketMessage: "Selecione um atendimento para começar a conversar.",
       },
       ticketsManager: {
         buttons: {
@@ -230,7 +230,7 @@ const messages = {
       },
       tickets: {
         toasts: {
-          deleted: "O ticket que você estava foi deletado.",
+          deleted: "O atendimento que você estava foi deletado.",
         },
         notification: {
           message: "Mensagem de",
@@ -241,7 +241,7 @@ const messages = {
           search: { title: "Busca" },
         },
         search: {
-          placeholder: "Buscar tickets e mensagens",
+          placeholder: "Buscar atendimentos e mensagens",
         },
         buttons: {
           showAll: "Todos",
@@ -265,7 +265,7 @@ const messages = {
         assignedHeader: "Atendendo",
         noTicketsTitle: "Nada aqui!",
         noTicketsMessage:
-          "Nenhum ticket encontrado com esse status ou termo pesquisado",
+          "Nenhum atendimento encontrado com esse status ou termo pesquisado",
         connectionTitle: "Conexão que está sendo utilizada atualmente.",
         buttons: {
           accept: "Aceitar",
@@ -284,7 +284,7 @@ const messages = {
         listItems: {
           dashboard: "Dashboard",
           connections: "Conexões",
-          tickets: "Tickets",
+          tickets: "Atendimentos",
           contacts: "Contatos",
           quickAnswers: "Respostas Rápidas",
           queues: "Filas",
@@ -316,7 +316,7 @@ const messages = {
         confirmationModal: {
           deleteTitle: "Excluir",
           deleteMessage:
-            "Você tem certeza? Essa ação não pode ser revertida! Os tickets dessa fila continuarão existindo, mas não terão mais nenhuma fila atribuída.",
+            "Você tem certeza? Essa ação não pode ser revertida! Os atendimentos dessa fila continuarão existindo, mas não terão mais nenhuma fila atribuída.",
         },
       },
       queueSelect: {
@@ -360,7 +360,7 @@ const messages = {
         confirmationModal: {
           deleteTitle: "Excluir",
           deleteMessage:
-            "Todos os dados do usuário serão perdidos. Os tickets abertos deste usuário serão movidos para a fila.",
+            "Todos os dados do usuário serão perdidos. Os atendimentos abertos deste usuário serão movidos para a fila.",
         },
       },
       settings: {
@@ -390,7 +390,7 @@ const messages = {
       messagesInput: {
         placeholderOpen: "Digite uma mensagem ou tecle ''/'' para utilizar as respostas rápidas cadastrada",
         placeholderClosed:
-          "Reabra ou aceite esse ticket para enviar uma mensagem.",
+          "Reabra ou aceite esse atendimento para enviar uma mensagem.",
         signMessage: "Assinar",
       },
       contactDrawer: {
@@ -404,9 +404,9 @@ const messages = {
         delete: "Deletar",
         transfer: "Transferir",
         confirmationModal: {
-          title: "Deletar o ticket do contato",
+          title: "Deletar o atendimento do contato",
           message:
-            "Atenção! Todas as mensagens relacionadas ao ticket serão perdidas.",
+            "Atenção! Todas as mensagens relacionadas ao atendimento serão perdidas.",
         },
         buttons: {
           delete: "Excluir",

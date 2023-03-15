@@ -16,7 +16,7 @@ import Chart from "./Chart"
 
 const useStyles = makeStyles(theme => ({
   mainContainer: {
-    height: '100%',
+    height: `calc(100% + 90px)`,
     width: '100%',
     background: theme.palette.background.default,
   },
