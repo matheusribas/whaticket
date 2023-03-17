@@ -248,7 +248,7 @@ const messages = {
         },
       },
       transferTicketModal: {
-        title: "Transferir Ticket",
+        title: "Transferir Atendimento",
         fieldLabel: "Digite para buscar usuários",
         fieldQueueLabel: "Transferir para fila",
         fieldConnectionLabel: "Transferir para conexão",
@@ -272,7 +272,7 @@ const messages = {
         },
       },
       newTicketModal: {
-        title: "Criar Ticket",
+        title: "Criar Atendimento",
         fieldLabel: "Digite para pesquisar o contato",
         add: "Adicionar",
         buttons: {
